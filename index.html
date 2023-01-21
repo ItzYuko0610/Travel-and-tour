@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Tour and Travel!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;1,100;1,300&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    outline: none;
+    border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+  
+section{
+    padding:5rem 9%;
+}
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    border:0.2rem solid black;
+    color:black;
+    cursor:pointer;
+    background:none;
+    font-size:1.7rem;
+    padding:1rem 3rem;
+
+}
+.btn:hover{
+    background: black;
+    color: white;
+}
+.heading {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-size: 4rem;
+    color: #10221b;
+  }
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding:2rem 9%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+}
+.header.active{
+    background: #fff;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+.header .logo{
+    margin-right: auto;
+    font-size: 2.5rem;
+    color:black;
+    font-weight: bolder;
+}
+.wrapper1{
+  margin-left: auto;
+  margin-right: auto;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  max-width: 550px;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.6);
+}
+
+.wrapper1 .title1 h1{
+  color: green;
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 3.5rem;
+  
+}
+
+.contact-form{
+  display: flex;
+}
+
+.input-fields{
+  display: flex;
+  flex-direction: column;
+  margin-right: 4%;
+ 
+}
+
+.input-fields,
+.msg{
+  width: 60%;
+}
+
+.input-fields .input,
+.msg textarea{
+  margin: 10px 0;
+  background: transparent;
+  border: 0px;
+  border-bottom: 2px solid #5f66618f;
+  padding: 10px;
+  color: black;
+  width: 100%;
+}
+
+.msg textarea{
+  height: 192px;
+}
+.msg .btn1{
+  margin-top: 1rem;
+  display: inline-block;
+  border:0.2rem solid black;
+  color:black;
+  cursor:pointer;
+  background:none;
+  font-size:1.7rem;
+  padding:1rem 3rem;
+
+}
+
+i{
+        color:green;
+}
+
+.header .navbar a{
+    margin-left: 2rem;
+    font-size: 1.7rem;
+    color: black;
+    
+}
+.header .navbar a:hover{
+    color: green;
+}
+.header .navbar #nav-close{
+    font-size: 5rem;
+    cursor: pointer;
+    color: black;
+    display: none;
+}
+.header .icons a, .header .icons div{
+    font-size: 2.5rem;
+    margin-left: 2rem;
+    cursor:pointer;
+    color:black;
+}
+
+.header.icons a:hover, .header.icons div:hover{
+    color: green;
+}
+.header #menu-btn{
+    display: none;
+}
+
+.search-form{
+    position: fixed;
+    top:0;
+    left:0;
+    height: 100%;
+    width:100%;
+    background:rgba(0,0,0,0.8);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    z-index:10000;
+    transform: translateY(-110%);
+    }
+
+.search-form.active{
+    transform: translateY(0%);
+}
+
+#close-search{
+    position: absolute;
+    top:1.5rem;
+    right:2.5rem;
+    cursor:pointer;
+    color:white;
+    font-size:5rem;
+
+}
+#close-search:hover{
+    color:green;
+
+}
+form{
+    width:70rem;
+    margin: 0 2rem;
+    padding-bottom: 2rem;
+    border-bottom: .2rem solid white;
+    display:flex;
+    align-items: center;
+}
+form input{
+    width:100%;
+    font-size: 2rem;
+    color:white;
+    text-transform: none;
+    background: none;
+    padding-right: 2rem;
+}
+
+form input::placeholder{
+    color:#aaa;
+
+}
+
+form label{
+    font-size: 3rem;
+    cursor:pointer;
+    color:white;
+    
+}
+form label:hover{
+    color:green;
+}
+.home{
+    padding:0;
+
+}
+.home .box{
+    min-height:100vh;
+    display:flex;
+    align-items: center;
+    background-size: cover !important;
+    background-position: center !important;
+    justify-content: flex-end;
+    padding: 2rem 9%;
+
+}
+
+.home .content{
+    width:50rem;
+
+}
+.home .content span{
+    font-size: 4rem;
+    color:black;
+}
+.home .content h3{
+    font-size: 6rem;
+    color:green;
+    padding-top: .5rem;
+    text-transform: uppercase;
+}
+.home .content p{
+    line-height: 2;
+    color:black;
+    font-size: 1.5rem;
+    padding:1rem 0;
+}
+.category .box-container{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(29rem, 1fr))[auto-fit];
+    grid-template-columns: repeat(auto-fit, minmax(29rem, 1fr));
+    gap: 1.5rem;
+}
+
+.category .box-container .box {
+    text-align: center;
+    padding: 1rem;
+  }
+  .category .box-container .box img {
+    height: 20rem;
+    width: 20rem;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+  }
+  .category .box-container .box h3 {
+    font-size: 2rem;
+    color: #219150;
+  }
+  
+  .category .box-container .box p {
+    font-size: 1.5rem;
+    color: #10221b;
+    padding: 1rem 0;
+    line-height: 2;
+  }
+  .packages {
+    background: #eee;
+  }
+  
+  .packages .box-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(32rem, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .packages .box-container .box {
+    text-align: center;
+    background: #fff;
+    border: 0.2rem solid #10221b;
+    -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    border-radius: .5rem;
+  }
+  
+  .packages .box-container .box:hover {
+    background: #10221b;
+  }
+  
+  .packages .box-container .box:hover .content > * {
+    color: #fff;
+  }
+  
+  .packages .box-container .box:hover .btn {
+    border-color: #fff;
+  }
+  
+  .packages .box-container .box:hover .btn:hover {
+    background: #fff;
+    color: #10221b;
+  }
+  
+  .packages .box-container .box .image {
+    height: 25rem;
+    overflow: hidden;
+    padding: 2rem;
+    padding-bottom: 0;
+    border-radius: .5rem;
+  }
+  
+  .packages .box-container .box .image img {
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: .5rem;
+  }
+  
+  .packages .box-container .box .content {
+    padding: 2rem;
+  }
+  
+  .packages .box-container .box .content h3 {
+    font-size: 2rem;
+    color: #10221b;
+  }
+  
+  .packages .box-container .box .content p {
+    font-size: 1.5rem;
+    color: #10221b;
+    padding: 1rem 0;
+    line-height: 2;
+  }
+  
+  .packages .box-container .box .content .price {
+    font-size: 2rem;
+    color: #219150;
+  }
+
+  .footer {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(../images/footer-bg.jpg) no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/footer.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  
+  .footer .box-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(25rem, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .footer .box-container .box h3 {
+    font-size: 2rem;
+    padding: 1.5rem 0;
+    color: #fff;
+  }
+  
+  .footer .box-container .box a {
+    display: block;
+    font-size: 1.4rem;
+    color: #fff;
+    padding: 1rem 0;
+  }
+  
+  .footer .box-container .box a i {
+    color: #219150;
+    padding-right: .5rem;
+  }
+  
+  .footer .box-container .box a:hover {
+    color: #219150;
+  }
+  
+  .footer .box-container .box a:hover i {
+    padding-right: 2rem;
+  }
+  
+  .footer .credit {
+    text-align: center;
+    margin-top: 2.5rem;
+    padding: 1rem;
+    padding-top: 2.5rem;
+    font-size: 2rem;
+    color: #fff;
+  }
+  
+  .footer .credit span {
+    color: #219150;
+  }
+  
+
+
+@media (max-width:1200px){
+    .header{
+        padding: 2rem;
+    }
+    section{
+        padding:3rem 2rem;
+    }
+}
+
+@media (max-width:991px){
+    html{
+        font-size: 55%;
+    }
+    .home .box{
+        padding: 2rem;
+        justify-content: center;
+        background-position: right !important;
+    }
+    .home .box .conent{
+        text-align: center;
+
+    }
+    .home .box .conent span{
+        font-size: 3rem;
+    }
+    .home .box .conent h3{
+        font-size: 4rem;
+    }
+}
+@media (max-width:768px){
+    .header #menu-btn{
+        display: inline-block;
+    }
+    .header .navbar{
+        position: fixed;
+        top:0; left:-110%;
+        background: white;
+        z-index:10000;
+        width: 35rem;
+        height: 100%;
+       
+        display:flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    .header .navbar.active{
+        left:0;
+        box-shadow: 0 0 0 100vw rgba(0,0,0,0.8);
+    }
+    .header .navbar a{
+        margin:1rem 0;
+        font-size: 3rem;
+    }
+    .header .navbar #nav-close{
+        display: block;
+        position: absolute;
+        top:1rem; right:2rem;
+    }
+    .contact-form{
+      flex-direction: column;
+    }
+    .msg textarea{
+      height: 80px;
+    }
+    .input-fields,
+    .msg{
+      width: 100%;
+    }
+  }
+   
+
+@media (max-width:450px){
+    html{
+        font-size: 50%;
+    }
+    .heading {
+        font-size: 3rem;
+      }
+}
+</style>
+
+
+</head>
+<body>
+
+    <header class="header">
+
+        <a href="#" class="logo"><i class="fas fa-hiking"></i></a>
+        <nav class="navbar">
+            <div id="nav-close" class="fas fa-times">
+
+            </div>
+            <a href="#home">Home</a>
+            <a href="#home">Adventure</a>
+            <a href="#home">Package</a>
+            <a href="#home">Contact</a>
+            </div>
+        </nav>
+
+        <div class="icons">
+            <div id="menu-btn" class="fas fa-bars"></div>
+            <div id="search-btn" class="fas fa-search"></div>
+    
+        </header>
+
+        <div class="search-form"></div>
+        <div id="close-search" class="fas fa-times"></div>
+        <from action="">
+            <input tag="search" name="" placeholder="search here..." id="search-box">
+            <label class="fas fa-search"></label>
+        </from>
+
+        <section class="home" id="home">
+          <div class="wrapper">
+            <div class="box" style="background: url(https://i.pinimg.com/736x/dd/bf/8a/ddbf8a8222cee04313c1349324399d76.jpg) no-repeat;">
+              <div class="content">
+                <span>Never stop</span>
+                  <h3>EXPLORING!</h3>
+                  <p>Travel.com offers better Korea travel packages</p>
+               <a href="#category" class="btn">Get Stared!</a>
+            </div>
+            </div>
+          </div>
+        </section>
+
+        
+
+        <section class="category" id="category">
+          <h1 class="heading">Adventure Ideas</h1>
+          <div class="box-container">
+
+            <div class="box">
+              <img src="https://th.bing.com/th/id/OIP.ek8aZ-TaNqKenbYX-sCazQHaHa?pid=ImgDet&rs=1">
+              <h3>Walk across and into the Jeonju Hanok Village!</h3>
+              <p>Jeonju Hanok Village is a village in the city of Jeonju, South Korea, and overlaps with the Pungnam-dong and Gyo-dong neighborhoods. The village contains over 800 Korean traditional houses called 'Hanok'. The village is famous among Koreans and tourists because of its traditional buildings that strongly contrast with the modern city around it. The village was designated as an International Slow City in 2010 in recognition of its relaxed pace of life where traditional culture and nature blend harmoniously. The number of visitors to Jeonju Hanok Village has increased sharply since the 2000s. The visitor numbers more than doubled from 2007 to 2014, from 3.17 million to 7.89 million. Excluding Seoul, Jeonju is ranked third among major tourist cities throughout Korea, behind Jeju and Busan.</p>
+              <a href="https://en.wikipedia.org/wiki/Jeonju_Hanok_Village" class="btn" src="target" target="_blank">Read More!</a>
+            </div>
+
+            <div class="box">
+              <img src="https://th.bing.com/th/id/OIP.MvTtxeBergM1T716Yw6FTAHaEk?pid=ImgDet&rs=1">
+              <h3>See the beauty of Jeongbang Waterfall!</h3>
+              <p>Jeongbang Waterfall is a famous waterfall on Jeju Island. The waterfall is 23 m (75 ft) high and is very close to the ocean. Depending on the level of recent rainfall, it can be up 8 m (26 ft) wide. The source of the waterfall is the stream Donghong-chun. Located near Seogwipo, Jeongbang Waterfall is a popular tourist attraction. It is considered Yeongjusipgeong, one of the ten greatest scenic wonders of Jeju. Legend states that a holy dragon lived underneath it. It was said that the dragon's spirit is contained in the water which can cure diseases and bring rain during drought. Furthermore, a nearby small waterfall is said to resemble a servant waiting on a lord.</p>
+              <a href="https://en.wikipedia.org/wiki/Jeongbang_Waterfall" class="btn" src="target" target="_blank">Read More!</a>
+            </div>
+      
+            <div class="box">
+              <img src="https://th.bing.com/th/id/OIP.GYVyFkv8OZTClusSmFWuNgHaE8?pid=ImgDet&rs=1">
+              <h3>Face the bustling crowd in Seoul Square!</h3>
+              <p>Seoul is in the northwest of South Korea. Seoul proper comprises 605.25 km2 (233.69 sq mi), with a radius of approximately 15 km (9 mi), roughly bisected into northern and southern halves by the Han River. The Han River and its surrounding area played an important role in Korean history. Seoul, officially known as the Seoul Special City, is the capital and largest metropolis of South Korea. According to the 2020 census, Seoul has a population of 9.9 million people, and forms the heart of the Seoul Capital Area with the surrounding Incheon metropolis and Gyeonggi province. Considered to be a global city and rated as an Alpha - City by Globalization and World Cities Research Network (GaWC), Seoul was the world's fourth largest metropolitan economy in 2014, following Tokyo, New York City and Los Angeles.</p>
+              <a href="https://en.wikipedia.org/wiki/Seoul" class="btn" src="target" target="_blank">Read More!</a>
+            </div>
+            </section>
+
+
+            <section class="packages" id="packages">
+              <h1 class="heading">Popular packages</h1>
+              <div class="box-container">
+
+                <div class="box">
+                  <div class="image">
+                    <img src="https://th.bing.com/th/id/R.a52e3237c07f198aa3169f41aa5c95fe?rik=2oXYrptdlZ17XQ&pid=ImgRaw&r=0">
+                  </div>
+                  <div class="content">
+                    <h3>Get the celebrity treatment with world-class service at Signiel Seoul</h3>
+                    <p>Located between floors 76 and 101 of Lotte World Tower, Signiel Seoul boasts panoramic views of Seoul in all 235 rooms. This five-star hotel features a champagne bar, Michelin-starred restaurant, indoor swimming pool, fitness centre and banquet facilities. It is also directly connected to Jamsil Subway Station (Line 2 and 8) through an underground passage and provides free WiFi access throughout the entire property. All rooms are carpeted and fitted with a minibar, fridge, coffee machine, safety deposit box and flat-screen TV. En suite bathroom includes a hairdryer, free toiletries, slippers and toilet with an electronic bidet. Staff at Signiel Seoul can assist guests with luggage storage, valet parking and concierge services. Dry cleaning, laundry, trouser press and ironing services are available at a surcharge. Awarded with 1 Michelin star, BICENA provides Korean-style dishes for lunch and dinner. Guests can also enjoy French gourmets at STAY restaurant which is owned by 3-star Michelin chef Yannick Alléno. Signiel Seoul is 7 km from Gangnam Station, while COEX Mall is under a 20-minute drive away. The nearest airport is Gimpo Airport, a 45-minute drive away, while Incheon International Airport is under a 70-minute drive from the hotel. Couples particularly like the location — they rated it 9.3 for a two-person trip.</p>
+                  </div>
+                </div>
+
+                <div class="box">
+                  <div class="image">
+                    <img src="https://www.lottehotel.com/content/dam/lotte-hotel/lotte/seoul/accommodation/executive-tower/suite/premier-suite-room/181026-31-2000-roo-LTSE.jpg.thumb.1920.1920.jpg">
+                  </div>
+                  <div class="content">
+                    <h3>Stay with us at LOTTE HOTEL SEOUL in Seoul! and make your stay as memorable as the trip!</h3>
+                    <p>LOTTE HOTEL SEOUL, Korea's premier luxury business hotel, boasts 1,015 rooms and is located in Sogong-dong, Seoul. The hotel's optimal location makes it easily accessible from Seoul’s major sightseeing spots such as Myeong-dong, Euljiro, and Cheonggyecheon. Along with the unique rooms that designed by four world-famous interior design agencies to reflect the latest trends, the Club Floor offers elegance and sophistication for the success of your business. In addition, LOTTE HOTEL SEOUL provides high-end venues for family gatherings, luxury weddings, large-scale international conferences, and business events, as well as the finest restaurants that are optimal for serving state guests and other VIPs. Rooma have customized spaces that will satisfy every guest, including tourists and business travelers. Every room has a fantastic view of downtown Seoul.State-of-the-art facilities and modern design. He:on bedding for the most peaceful sleep. Dinning guests will always be satisfied with the finest cuisines made by the world-renowned chefs. Michelin 1-Star restaurant, Pierre Gagnaire a Seoul. Fine cuisines made with fresh, hand-picked ingredients. Sophisticated and modern restaurants. Facilities at theLOTTE HOTEL SEOUL offers programs and treatments that are perfectly suited for each guest based on their individual lifestyles and a one-to-one counseling session.</p>
+                  </div>
+                </div>
+
+              </div>
+            </section>
+
+            <section class="contact" id="contact">
+              <div class="wrapper1">
+                <div class="title1">
+                  <h1>CONTACT US!</h1>
+                </div>
+                <div class="contact-form">
+                  <form method="post">
+                    <div class="input-feilds">
+                      <input type="text" class="input" placeholder="name" name="name">
+                      <input type="email" class="input" placeholder="email adress" name="email" pattern=".+gmail\.com">
+                      <input type="phone" class="input" placeholder="phone number" name="phonenumber">
+                      <input type="text" class="input" placeholder="subject" name="subject">
+                    </div>
+                    <div class="msg">
+                      <textarea placeholder="message" name="message"></textarea>
+                      <div class="btn1">
+                        <button type="submit">SEND</button>
+                      </div>
+                    </form>
+                    </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="footer">
+              <div class="box-container">
+                <div class="box">
+                  <h3>QUICK LINKS!</h3>
+                  <a href="#home">Home</a>
+                  <a href="#packages">Packages</a>
+                  <a href="#contact">Query</a>
+                </div>
+
+                <div class="box">
+                <h3>Extra links!</h3>
+                <a href="#contact">Ask questions!</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Privacy Policy</a>
+                </div>
+
+                <div class="box">
+                  <h3>Contact INFO!</h3>
+                  <a href="tel:+0551246542">
+                    <i class="fas fa-phone">+0551246452</i>
+                  </a>
+                  <a href="mailto:sharonpereira0610@gmail.com">
+                    <i class="fas fa-envelope">sharonpereira0610@gmail.com</i>
+                  </a>
+                  <a href="-">
+                    <i class="fas fa-map">Dubai, United Arab Emirates, 00000</i>
+                  </a>
+                </div>
+                        
+     <div class="box">
+      <h3>follow us</h3>
+      <a href="https://www.facebook.com/yash.srivastav0"> <i class="fab fa-facebook-f"></i> Youtube </a>
+      <a href="https://www.instagram.com/chayaravindra_"> <i class="fab fa-instagram"></i> instagram </a>
+      <a href="https://www.linkedin.com/in/chaya ravindra-/"> <i class="fab fa-linkedin"></i> linkedin </a>
+      <a href="https://github.com/chayaravindra"> <i class="fab fa-github"></i> github </a>
+  </div>
+</div>
+</section>
+
+</body>
+</html>
